@@ -2,9 +2,10 @@
   "name": "meangames",
   "version": "1.0.0",
   "description": "mean stack app built with the help of codeschool.com",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch --gulpfile client/gulpfile.babel.js"
   },
   "author": "Tate Rathje <flint285@gmail.com>",
   "license": "MIT",
