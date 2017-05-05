@@ -10,7 +10,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _angular2.default.module('olympics', []).controller('sportsController', function ($http) {
 	var _this = this;
 
-	// this.sports = ["Weightlifting", "Cycling"];
 	$http.get('/sports').then(function (response) {
 		_this.sports = response.data;
 	});
