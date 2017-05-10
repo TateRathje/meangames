@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "gulp watch --gulpfile client/gulpfile.babel.js"
+    "watch": "gulp watch --gulpfile client/gulpfile.babel.js",
+    "start": "node --inspect ./server/app.js"
   },
   "author": "Tate Rathje <flint285@gmail.com>",
   "license": "MIT",
