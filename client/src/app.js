@@ -3,8 +3,10 @@ import 'angular-ui-router'
 
 angular.module('olympics', ["ui.router"])
 
-.config(($stateProvider, $urlRouterProvider) => {
-  $urlRouterProvider.otherwise('/sports')
+.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
+  $urlRouterProvider.otherwise('/sports');
+
+  $locationProvider.hashPrefix('');
 
   $stateProvider
     .state('sports', {

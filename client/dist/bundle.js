@@ -9,8 +9,10 @@ require('angular-ui-router');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_angular2.default.module('olympics', ["ui.router"]).config(function ($stateProvider, $urlRouterProvider) {
+_angular2.default.module('olympics', ["ui.router"]).config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/sports');
+
+  $locationProvider.hashPrefix('');
 
   $stateProvider.state('sports', {
     url: '/sports',
