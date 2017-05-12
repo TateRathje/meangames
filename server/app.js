@@ -8,6 +8,9 @@ mongoUtil.connect();
 
 app.use(express.static(__dirname + "/../client"));
 
+let bodyParser = require('body-parser');
+let jsonParser = bodyParser.json();
+
 app.get("/sports", (req, res) => {
   let sports = mongoUtil.sports();
   sports.find().toArray((err, docs) => {
@@ -30,6 +33,16 @@ app.get('/sports/:name', (req, res) => {
     console.log('Sport doc: ', doc);
     res.json(doc);
   });
+});
+
+app.post('/sports/:name/medals', jsonParser, (req, res) => {
+  let sportName = req.params.name;
+  let newMedal = req.body.medal;
+
+  console.log('Sport name: ', sportName);
+  console.log('Medal: ', newMedal);
+
+  res.sendStatus(201);
 });
 
 app.listen(8181, () => console.log("Listening on 8181"));
