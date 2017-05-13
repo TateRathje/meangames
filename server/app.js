@@ -47,7 +47,7 @@ app.post('/sports/:name/medals', jsonParser, (req, res) => {
   let query = {name: sportName};
   let update = {$push: {goldMedals: newMedal}};
 
-  sports.findOneAndUpdate(query, update, (err, res) => {
+  sports.findOneAndUpdate(query, update, (err) => {
     if (err) {
       res.sendStatus(400);
     }
