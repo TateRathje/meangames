@@ -1,5 +1,9 @@
 "use strict";
 
+if (process.env.NODE_ENV !== 'production') {
+    require('@glimpse/glimpse').init();
+}
+
 let express = require('express');
 let app = express();
 
